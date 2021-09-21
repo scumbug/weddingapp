@@ -16,10 +16,10 @@ module.exports = (db, mg) => {
 	);
 
 	// Autocomplete guests
-	router.post('/guests/search', express.json(), async (req, res) => {
+	router.get('/guests/search', async (req, res) => {
 		try {
 			// Get autocomplete result
-			const result = await searchGuests(req.body.query);
+			const result = await searchGuests([req.query.q]);
 			res.status(200).json(result);
 		} catch (e) {
 			console.log(e);

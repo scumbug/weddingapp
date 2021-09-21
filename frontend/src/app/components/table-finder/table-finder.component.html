@@ -1,0 +1,33 @@
+<div class="grid">
+    <div class="col-6 col-offset-3">
+        <span class="p-fluid">
+            <p-autoComplete [(ngModel)]="selectedGuest" [suggestions]="results" field="nameEn" [forceSelection]="true"
+                (completeMethod)="search($event)">
+            </p-autoComplete>
+        </span>
+    </div>
+</div>
+<div class="grid">
+    <div class="sm:col-10 md:col-10 lg:col-6 xl:col-6">
+        <p-card *ngIf="selectedGuest != null">
+            <div class="grid">
+
+                <div class="col">
+                    <p class="text-center font-bold text-1xl">{{ selectedGuest.nameEn }}</p>
+                    <!-- Phone: {{selectedGuest.phone}}
+                            Relationship: {{selectedGuest.designation}} -->
+                </div>
+
+                <div class="col-1">
+                    <p-divider layout="vertical"></p-divider>
+                </div>
+
+                <div class="col">
+                    <h1>Table </h1>
+                    {{selectedGuest.table}}
+                </div>
+
+            </div>
+        </p-card>
+    </div>
+</div>
