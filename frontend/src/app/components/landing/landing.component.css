@@ -1,0 +1,31 @@
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css");
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css");
+
+:host ::ng-deep p-menubarsub {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+:host ::ng-deep a.p-menubar-button {
+  order: 3;
+}
+
+:host ::ng-deep .p-menubar-start {
+  width: 100%;
+}
+
+.menubar-float {
+  z-index: 999;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 0 20px rgba(53, 48, 49, 0.15);
+  -webkit-box-shadow: 0 0 20px rgba(53, 48, 49, 0.15);
+  -moz-box-shadow: 0 0 20px rgba(53, 48, 49, 0.15);
+  -ms-box-shadow: 0 0 20px rgba(53, 48, 49, 0.15);
+  -o-box-shadow: 0 0 20px rgba(53, 48, 49, 0.15);
+}

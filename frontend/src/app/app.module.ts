@@ -9,9 +9,16 @@ import { AppComponent } from './app.component';
 
 import { PrimengModule } from './primeng.module';
 import { TableFinderComponent } from './components/table-finder/table-finder.component';
+import { LandingComponent } from './components/landing/landing.component';
+
+import { CountdownModule } from 'ngx-countdown';
+import { ImagekitioAngularModule } from 'imagekitio-angular';
+import { environment } from 'src/environments/environment';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
 
 @NgModule({
-  declarations: [AppComponent, TableFinderComponent],
+  declarations: [AppComponent, TableFinderComponent, LandingComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +26,13 @@ import { TableFinderComponent } from './components/table-finder/table-finder.com
     PrimengModule,
     HttpClientModule,
     FormsModule,
+    CountdownModule,
+    ImagekitioAngularModule.forRoot({
+      publicKey: environment.publicKey,
+      urlEndpoint: environment.urlEndpoint,
+    }),
+    GalleryModule,
+    LightboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

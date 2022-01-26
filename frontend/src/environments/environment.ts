@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  publicKey: 'public_da4cUoMC96k7hQmbMIbkNOSsidw',
+  urlEndpoint: 'https://ik.imagekit.io/0sin2owk1ts',
 };
 
 /*

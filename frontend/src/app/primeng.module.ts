@@ -5,6 +5,8 @@ import { SharedModule } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
 
 const PRIMENG = [
   MenubarModule,
@@ -12,6 +14,8 @@ const PRIMENG = [
   AutoCompleteModule,
   CardModule,
   DividerModule,
+  ToolbarModule,
+  ButtonModule,
 ];
 
 @NgModule({
