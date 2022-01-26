@@ -4,6 +4,7 @@ import * as $ from 'jquery';
 import { Router } from '@angular/router';
 import { CountdownConfig } from 'ngx-countdown';
 import { formatDuration, Interval, intervalToDuration } from 'date-fns';
+import { Gallery } from 'src/app/models/gallery.interface';
 
 @Component({
   selector: 'app-landing',
@@ -14,7 +15,7 @@ export class LandingComponent implements OnInit {
   items!: MenuItem[];
   timerConfig: CountdownConfig = {};
   imageCount = 18;
-  images: Object[] = [];
+  images: Gallery[] = [];
   transformations = [
     {
       width: 1600,
