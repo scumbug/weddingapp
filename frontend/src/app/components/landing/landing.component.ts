@@ -42,7 +42,8 @@ export class LandingComponent implements OnInit {
         routerLink: [''],
         fragment: 'wedding',
       },
-      { label: 'Photo Album', routerLink: [''], fragment: 'album' },
+      { label: 'Photos Album', routerLink: [''], fragment: 'album' },
+      { label: 'Table Finder', routerLink: [''], fragment: 'table' },
       {
         label: 'ROM Stream',
         url: 'https://youtu.be/8yjT0I6v_n8',

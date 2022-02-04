@@ -1,35 +1,28 @@
-<div class="grid">
-    <div class="col-6 col-offset-3">
-        <span class="p-fluid">
-            <p-autoComplete [(ngModel)]="selectedGuest" [suggestions]="results" field="nameEn" [forceSelection]="true"
-                (completeMethod)="search($event)">
-            </p-autoComplete>
-        </span>
-    </div>
+
+<span class="p-fluid">
+    <p-autoComplete [(ngModel)]="selectedGuest" [suggestions]="results" field="nameEn" [forceSelection]="true"
+        (completeMethod)="search($event)" (onSelect)="getTable($event)" placeholder="Enter your name / phone number">
+    </p-autoComplete>
+</span>
+
+<div *ngIf="selectedGuest != null || ''">
+
+    <h2 class="text-center heavy font-bold"><br>Hello {{ selectedGuest.nameEn }}!</h2>
+
+    <h3 class="text-center font-bold">Your table is:</h3>
+
+    <h1 class="title font-bold text-center">{{selectedGuest.table}}</h1>
+
+    <p-divider></p-divider>
+
+    <h3 class="text-center heavy font-bold">Guests at table <strong>{{selectedGuest.table}}</strong><br></h3>
+
+    <p-table [value]="guests" responsiveLayout="scroll">
+        <ng-template pTemplate="body" let-guest>
+            <tr>
+                <td class="text-center">{{guest.nameEn}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+
 </div>
-<div class="grid">
-    <div class="sm:col-10 md:col-10 lg:col-6 xl:col-6">
-        <p-card *ngIf="selectedGuest != null">
-            <div class="grid">
-
-                <div class="col">
-                    <p class="text-center font-bold text-1xl">{{ selectedGuest.nameEn }}</p>
-                    <!-- Phone: {{selectedGuest.phone}}
-                            Relationship: {{selectedGuest.designation}} -->
-                </div>
-
-                <div class="col-1">
-                    <p-divider layout="vertical"></p-divider>
-                </div>
-
-                <div class="col">
-                    <h1>Table </h1>
-                    {{selectedGuest.table}}
-                </div>
-
-            </div>
-        </p-card>
-    </div>
-</div>
-test location <a
-    href="https://grab.onelink.me/2695613898?af_dp=grab%3A%2F%2Fopen%3FdropOffAddress%3DEvelyn%2Band%2BCS%2BWedding%26dropOffLatitude%3D1.33719734933582%26dropOffLongitude%3D103.79346124533721%26screenType%3DBOOKING%26sourceID%3D%26taxiTypeId%3D302%26c%3D%26pid%3D"></a>

@@ -10,6 +10,7 @@ import { HttpService } from '../../services/http.service';
 export class TableFinderComponent implements OnInit {
   selectedGuest!: Guest;
   results!: Guest[];
+  guests!: Guest[];
 
   constructor(private backend: HttpService) {}
 
@@ -19,6 +20,9 @@ export class TableFinderComponent implements OnInit {
     this.backend.lookupGuests($event.query).then((data) => {
       this.results = data;
     });
-    console.log(this.selectedGuest);
+  }
+
+  getTable($event: any) {
+    this.backend.lookupTables($event.table).then((data: any) => this.guests = data)
   }
 }

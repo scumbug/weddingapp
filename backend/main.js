@@ -1,5 +1,6 @@
 const express = require('express');
 const mg = require('./utils/mg');
+const cors = require('cors');
 require('dotenv').config();
 
 // Setup config
@@ -14,6 +15,8 @@ const db = mg.init(process.env.MONGO_URI);
 // Declare routes
 const guests = require('./api/guests')(db, mg);
 const messages = require('./api/messages')(db, mg);
+
+app.use(cors());
 
 //
 // Endpoints

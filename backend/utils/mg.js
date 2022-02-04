@@ -65,6 +65,13 @@ const search = (client, db, collection) => {
 	return closure;
 };
 
+const find = (client, db, collection) => {
+	const closure = async (table) => {
+		return await client.db(db).collection(collection).find({ table }).toArray();
+	};
+	return closure;
+};
+
 /**
  * Find document by id
  * @param {MongoClient} client
@@ -76,7 +83,7 @@ const findOne = (client, db, collection) => {
 		return await client
 			.db(db)
 			.collection(collection)
-			.findOne({ _id: new ObjectId(id) });
+			.findOne({ _id: ObjectId(id) });
 	};
 	return closure;
 };
@@ -87,6 +94,7 @@ module.exports = {
 	insertDoc,
 	search,
 	findOne,
+	find,
 };
 
 const SEARCH_GUEST_PIPELINE = (query) => {

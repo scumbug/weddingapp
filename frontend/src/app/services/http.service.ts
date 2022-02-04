@@ -14,4 +14,11 @@ export class HttpService {
       .get<any>('/api/guests/search', { params })
       .toPromise();
   }
+
+  async lookupTables(query: string): Promise<Guest[]> {
+    const params = new HttpParams().set('q', query);
+    return await this.http
+      .get<any>('/api/guests/table', { params })
+      .toPromise();
+  }
 }
