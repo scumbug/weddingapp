@@ -6,6 +6,9 @@ export const environment = {
   production: false,
   publicKey: 'public_da4cUoMC96k7hQmbMIbkNOSsidw',
   urlEndpoint: 'https://ik.imagekit.io/0sin2owk1ts',
+  backend: {
+    apiURL: '/api',
+  },
 };
 
 /*
