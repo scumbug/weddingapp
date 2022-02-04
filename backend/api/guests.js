@@ -57,19 +57,19 @@ module.exports = (db, mg) => {
 		}
 	});
 
-	router.get('/guests/alert', async (req, res) => {
-		try {
-			const result = await twilio.messages.create({
-				body: 'hello',
-				messagingServiceSid: process.env.TWILIO_MSG_SID,
-				to: '+6598716055',
-			});
-			res.status(200).json(result);
-		} catch (e) {
-			console.log(e);
-			res.status(500).json({ message: 'Internal Server Error!' });
-		}
-	});
+	// router.get('/guests/alert', async (req, res) => {
+	// 	try {
+	// 		const result = await twilio.messages.create({
+	// 			body: 'hello',
+	// 			messagingServiceSid: process.env.TWILIO_MSG_SID,
+	// 			to: '',
+	// 		});
+	// 		res.status(200).json(result);
+	// 	} catch (e) {
+	// 		console.log(e);
+	// 		res.status(500).json({ message: 'Internal Server Error!' });
+	// 	}
+	// });
 
 	return router;
 };

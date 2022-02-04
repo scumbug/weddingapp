@@ -27,8 +27,13 @@ export class TableFinderComponent implements OnInit {
   getTable($event: any) {
     this.backend.lookupTables($event.table).then((data: any) => {
       this.guests = data;
-      const defocus = this.autocomplete.nativeElement.childNodes[0].childNodes[0] as HTMLInputElement;
+      const defocus = this.autocomplete.nativeElement.childNodes[0]
+        .childNodes[0] as HTMLInputElement;
       defocus.blur();
     });
+  }
+
+  clear($event: any) {
+    $event.srcElement.value = '';
   }
 }
