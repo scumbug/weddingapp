@@ -1,4 +1,8 @@
 const express = require('express');
+const twilio = require('twilio')(
+	process.env.TWILIO_ACCOUNT_SID,
+	process.env.TWILIO_AUTH_TOKEN
+);
 
 module.exports = (db, mg) => {
 	const router = express.Router();
@@ -10,6 +14,11 @@ module.exports = (db, mg) => {
 		process.env.MONGO_COLLECTION
 	);
 	const findGuest = mg.findOne(
+		db,
+		process.env.MONGO_DB,
+		process.env.MONGO_COLLECTION
+	);
+	const findTable = mg.find(
 		db,
 		process.env.MONGO_DB,
 		process.env.MONGO_COLLECTION
@@ -27,10 +36,34 @@ module.exports = (db, mg) => {
 		}
 	});
 
+	router.get('/guests/table', async (req, res) => {
+		try {
+			const result = await findTable(req.query.q);
+			res.status(200).json(result);
+		} catch (e) {
+			console.log(e);
+			res.status(500).json({ message: 'Internal Server Error!' });
+		}
+	});
+
 	// Retrieve guest
-	router.get('/guests/:guestId', async (req, res) => {
+	router.get('/guests/id/:guestId', async (req, res) => {
 		try {
 			const result = await findGuest(req.params.guestId);
+			res.status(200).json(result);
+		} catch (e) {
+			console.log(e);
+			res.status(500).json({ message: 'Internal Server Error!' });
+		}
+	});
+
+	router.get('/guests/alert', async (req, res) => {
+		try {
+			const result = await twilio.messages.create({
+				body: 'hello',
+				messagingServiceSid: process.env.TWILIO_MSG_SID,
+				to: '+6598716055',
+			});
 			res.status(200).json(result);
 		} catch (e) {
 			console.log(e);

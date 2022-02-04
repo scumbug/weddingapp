@@ -7,6 +7,7 @@ import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 
 const PRIMENG = [
   MenubarModule,
@@ -16,6 +17,7 @@ const PRIMENG = [
   DividerModule,
   ToolbarModule,
   ButtonModule,
+  TableModule,
 ];
 
 @NgModule({
