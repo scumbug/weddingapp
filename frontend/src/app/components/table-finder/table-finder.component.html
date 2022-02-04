@@ -1,7 +1,7 @@
-
 <span class="p-fluid">
     <p-autoComplete [(ngModel)]="selectedGuest" [suggestions]="results" field="nameEn" [forceSelection]="true"
-        (completeMethod)="search($event)" (onSelect)="getTable($event)" placeholder="Enter your name / phone number">
+        (completeMethod)="search($event)" (onSelect)="getTable($event)" placeholder="Enter your name / phone number"
+        #autocomplete>
     </p-autoComplete>
 </span>
 
