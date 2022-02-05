@@ -207,24 +207,24 @@
     <!--End container-->
 </section>
 <!--End wedding section-->
-<!--Album section-->
-<section id="album" class="album bg-grey pt-120 pb-120">
+<!--Search section-->
+<section id="table" class="rsvp bg-grey pt-120 pb-120 ">
     <!--Container-->
     <div class="container">
-        <!--Row-->
-        <div class="row" gallerize>
-            <div *ngFor="let image of images; index as i">
-                <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
-                    <ik-image src={{image.src}} [transformation]="transformations" class="img-fluid"
-                        attr.imageSrc={{image.thumb}}></ik-image>
+        <div class="row vertical-align">
+            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 ">
+                <h1 class="title">Table Finder</h1>
+            </div>
+            <div class="col-md-5 col-sm-5 ">
+                <div class="block-registry">
+                    <app-table-finder></app-table-finder>
                 </div>
             </div>
         </div>
-
     </div>
     <!--End container-->
 </section>
-<!--End album section-->
+<!--End search section-->
 <!--Directions section-->
 <section id="directions" class="accom pt-120 pb-120 ">
     <!--Container-->
@@ -270,24 +270,24 @@
     <!--End container-->
 </section>
 <!--End directions section-->
-<!--Search section-->
-<section id="table" class="rsvp bg-grey pt-120 pb-120 ">
+<!--Album section-->
+<section id="album" class="album bg-grey pt-120 pb-120">
     <!--Container-->
     <div class="container">
-        <div class="row vertical-align">
-            <div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 ">
-                <h1 class="title">Table Finder</h1>
-            </div>
-            <div class="col-md-5 col-sm-5 ">
-                <div class="block-registry">
-                    <app-table-finder></app-table-finder>
+        <!--Row-->
+        <div class="row" gallerize>
+            <div *ngFor="let image of images; index as i">
+                <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
+                    <ik-image src={{image.src}} [transformation]="transformations" class="img-fluid"
+                        attr.imageSrc={{image.thumb}}></ik-image>
                 </div>
             </div>
         </div>
+
     </div>
     <!--End container-->
 </section>
-<!--End search section-->
+<!--End album section-->
 <!--Just married section -->
 <section class="just-married pt-200 pb-200 overlay">
     <div class="background-img"
