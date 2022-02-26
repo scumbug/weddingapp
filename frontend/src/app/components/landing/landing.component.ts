@@ -46,7 +46,7 @@ export class LandingComponent implements OnInit {
       { label: 'Table Finder', routerLink: [''], fragment: 'table' },
       {
         label: 'ROM Stream',
-        url: 'https://youtu.be/8yjT0I6v_n8',
+        url: 'https://youtu.be/YNIYhtTrDbI',
         target: '_blank',
       },
       { label: 'Directions', routerLink: [''], fragment: 'directions' },
